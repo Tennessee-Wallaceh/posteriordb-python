@@ -4,11 +4,15 @@ from typing import Union
 from .posterior_database import PosteriorDatabase
 from .posterior_database_github import PosteriorDatabaseGithub
 from .pymc3_model_implementation import PyMC3ModelImplementation
+from .jax_model_implementation import JaxModelImplementation
 from .stan_model_implementation import StanModelImplementation
 from .util import drop_keys
 
-implementations = {"stan": StanModelImplementation, "pymc3": PyMC3ModelImplementation}
-
+implementations = {
+    "stan": StanModelImplementation, 
+    "pymc3": PyMC3ModelImplementation,
+    "jax": JaxModelImplementation
+}
 
 class Model:
     def __init__(
